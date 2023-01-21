@@ -3,3 +3,10 @@ docker run -d --rm --name mongo -p 27017:27017 -v mongodbdata:/data/db mongo
 
 To Start MongoDB container using Docker-Compose
 docker compose up -d
+
+Build Nuget package
+dotnet pack -o ..\..\..\packages
+dotnet pack -p:PackageVersion=1.0.1 -o ..\..\..\packages
+
+Add nuget source
+dotnet nuget add source C:\Users\memiadmin\source\repos\packages -n PlayEconomy
